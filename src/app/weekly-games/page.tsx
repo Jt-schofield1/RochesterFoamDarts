@@ -254,7 +254,7 @@ export default function WeeklyGamesPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" asChild className="gap-2">
                 <a
-                  href="https://www.facebook.com/rochesterfoamdartleague"
+                  href="https://www.facebook.com/rochesterfoamdartleague/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

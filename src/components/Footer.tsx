@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin, Youtube, Instagram, Facebook } from "lucide-react"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -8,6 +8,24 @@ const navLinks = [
   { href: "/weekly-games", label: "Weekly Games" },
   { href: "/game-modes", label: "Game Modes" },
   { href: "/waiver", label: "Waiver" },
+]
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/rochesterfoamdartleague/",
+    label: "Facebook",
+    icon: Facebook,
+  },
+  {
+    href: "https://www.instagram.com/foamdartnation/",
+    label: "Instagram",
+    icon: Instagram,
+  },
+  {
+    href: "https://www.youtube.com/channel/UCc7mnZju1WStyGsSt5wlQTg",
+    label: "YouTube",
+    icon: Youtube,
+  },
 ]
 
 export default function Footer() {
@@ -30,9 +48,24 @@ export default function Footer() {
                 FOAM DART NATION
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-md mb-6">
               The Rochester Foam Dart League offers Nerf birthday parties, weekly play, fundraisers, school programs, and special events in Rochester, Buffalo, and Syracuse.
             </p>
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="p-2 bg-muted rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -93,9 +126,26 @@ export default function Footer() {
               75 BARRETT DRIVE P.O. BOX 65, WEBSTER, NY, 14580<br />
               5857488087 | PARTIES@ROCHESTERFOAMDARTLEAGUE.COM
             </p>
-            <p className="text-muted-foreground text-xs">
-              © {new Date().getFullYear()} Foam Dart Nation. All rights reserved.
-            </p>
+            <div className="flex items-center gap-6">
+              {/* Social Icons in Bottom Bar */}
+              <div className="flex items-center gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+              <p className="text-muted-foreground text-xs">
+                © {new Date().getFullYear()} Foam Dart Nation. All rights reserved.
+              </p>
+            </div>
           </div>
           <p className="text-center text-muted-foreground/50 text-xs mt-4">
             Powered by Squarespace
@@ -105,4 +155,3 @@ export default function Footer() {
     </footer>
   )
 }
-
