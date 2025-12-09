@@ -148,7 +148,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-center text-muted-foreground/50 text-xs mt-4">
-            Powered by Squarespace
+            Built by GJ Sites
           </p>
         </div>
       </div>
