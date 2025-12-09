@@ -36,7 +36,7 @@ export default function Navbar() {
               />
             </div>
             <span className="hidden sm:block font-bold text-lg text-foreground group-hover:text-primary transition-colors">
-              RFDL
+              Rochester Foam Dart League
             </span>
           </Link>
 
